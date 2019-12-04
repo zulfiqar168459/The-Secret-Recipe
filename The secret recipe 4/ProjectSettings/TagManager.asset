@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FallDetector
   - Checkpont
+  - Turn
   layers:
   - Default
   - TransparentFX

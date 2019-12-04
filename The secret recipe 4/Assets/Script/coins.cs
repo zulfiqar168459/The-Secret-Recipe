@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class coins : MonoBehaviour
 {
-    private int score = 0;
-    void Start() { }
+    private levelmanger GamelevelManger;
+    public int CoinValue;
+    void Start() {
+        GamelevelManger = FindObjectOfType<levelmanger>(); }
     void Update() { }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
-        score += 5;
-        Debug.Log("Your Score is " + score);
+        if (other.tag == "Player") {
+            GamelevelManger.AddCoins(CoinValue);
+            Destroy(gameObject); }
+        
     }
 }
